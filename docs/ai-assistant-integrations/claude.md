@@ -40,7 +40,7 @@ Connectors**. (Members: skip to [Step 4](#step-4-connect-your-account).)
 
 !!! info
 
-    📸 *Screenshot to add: the Connectors settings page.*
+    :fontawesome-regular-camera: *Screenshot to add: the Connectors settings page.*
 
 ## Step 2 — Add a custom connector
 
@@ -49,7 +49,7 @@ Connectors**. (Members: skip to [Step 4](#step-4-connect-your-account).)
 
 !!! info
 
-    📸 *Screenshot to add: the "Add custom connector" dialog.*
+    :fontawesome-regular-camera: *Screenshot to add: the "Add custom connector" dialog.*
 
 ## Step 3 — Enter the Open Referral server URL
 
@@ -60,7 +60,7 @@ Connectors**. (Members: skip to [Step 4](#step-4-connect-your-account).)
 
 !!! info
 
-    📸 *Screenshot to add: the dialog filled with the Open Referral URL.*
+    :fontawesome-regular-camera: *Screenshot to add: the dialog filled with the Open Referral URL.*
 
 ## Step 4 — Connect your account
 
@@ -74,7 +74,7 @@ The connector now shows as **Connected**.
 
 !!! info
 
-    📸 *Screenshot to add: the Open Referral OAuth consent screen.*
+    :fontawesome-regular-camera: *Screenshot to add: the Open Referral OAuth consent screen.*
 
 !!! warning
 
@@ -95,7 +95,7 @@ Try:
 
 !!! info
 
-    📸 *Screenshot to add: Claude answering a program-overview prompt.*
+    :fontawesome-regular-camera: *Screenshot to add: Claude answering a program-overview prompt.*
 
 ## What Claude can access
 

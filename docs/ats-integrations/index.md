@@ -2,7 +2,7 @@
 
 !!! info
 
-    🚧 Coming soon.
+    :fontawesome-solid-triangle-exclamation: Coming soon.
 
 Open Referral synchronises with your Applicant Tracking System. This section will cover:
 

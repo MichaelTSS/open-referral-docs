@@ -1,10 +1,10 @@
 # Getting started
 
-Salutations ! 👋
+Salutations ! :fontawesome-regular-hand-wave:
 
 !!! info
 
-    🚧 Coming soon.
+    :fontawesome-solid-triangle-exclamation: Coming soon.
 
 <!-- Suggested outline:
 ## Create your account

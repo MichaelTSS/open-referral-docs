@@ -4,7 +4,7 @@ Connect Open Referral to Mistral's Le Chat as a custom connector.
 
 !!! info
 
-    🚧 Coming soon — step-by-step guide with screenshots.
+    :fontawesome-solid-triangle-exclamation: Coming soon — step-by-step guide with screenshots.
 
 ## Prerequisites
 

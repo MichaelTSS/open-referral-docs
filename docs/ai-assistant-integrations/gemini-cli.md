@@ -5,7 +5,7 @@ Open Referral token via an HTTP header (it bypasses Gemini CLI's OAuth auto-disc
 
 !!! info
 
-    🚧 Screenshots coming soon.
+    :fontawesome-solid-triangle-exclamation: Screenshots coming soon.
 
 ## Prerequisites
 

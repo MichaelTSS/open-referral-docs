@@ -4,7 +4,7 @@ Connect Open Referral to ChatGPT (developer mode / custom connector).
 
 !!! info
 
-    🚧 Coming soon — step-by-step guide with screenshots.
+    :fontawesome-solid-triangle-exclamation: Coming soon — step-by-step guide with screenshots.
 
 ## Prerequisites
 

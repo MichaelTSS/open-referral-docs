@@ -10,7 +10,7 @@ program in natural language from your favourite AI assistant.
 
 !!! info
 
-    🚧 This documentation is being written. Pages are scaffolded and will be filled in progressively.
+    :fontawesome-solid-triangle-exclamation: This documentation is being written. Pages are scaffolded and will be filled in progressively.
 
 ### Where to go next
 
