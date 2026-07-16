@@ -1,97 +1,82 @@
-# Démo / onboarding — édition de la doc (pour Amandine)
+# Onboarding — éditer la doc (pour Amandine)
 
-> ⚠️ Fichier **interne**, non publié sur le site (absent de `SUMMARY.md`).
->
-> 🔐 **Note sécurité** : cette procédure utilise le compte GitHub **de Michel** (compte
-> partagé). C'est un dépannage temporaire. À terme, mieux vaut qu'Amandine utilise **son
-> propre compte** ajouté comme collaborateur (`gh repo add-collaborator MichaelTSS/open-referral-docs <user>`),
-> pour la traçabilité et pour ne pas partager d'accès personnels.
+> Fichier **interne**, non publié sur le site (le site est généré depuis `docs/`).
 
 ## Comment ça marche (en une phrase)
 
-La doc vit dans ce repo GitHub. GitBook y est branché en **Git Sync** : **chaque `git push`
-sur `main` redéploie automatiquement** https://docs.openreferral.io. Pas d'AWS, pas de build
-manuel — on édite du Markdown, on pousse, c'est en ligne.
+La doc vit dans ce repo GitHub, générée par **MkDocs Material** et hébergée sur
+**Cloudflare Pages** : **chaque `git push` sur `main` redéploie automatiquement**
+https://docs.openreferral.io. On édite du Markdown dans `docs/`, on pousse, c'est en ligne.
 
-## Prérequis
+---
 
-- macOS avec [Homebrew](https://brew.sh) installé.
-- Git installé (`git --version`).
+## Setup d'Amandine (GitHub `Lmenkikine`, déjà accès au repo)
 
-## Étape 1 — Installer GitHub CLI
+Amandine utilise **son propre compte GitHub** — pas de compte partagé.
 
 ```bash
+# 1. Installer GitHub CLI (macOS)
 brew install gh
-```
 
-## Étape 2 — Se connecter (compte de Michel)
+# 2. Se connecter à SON compte
+gh auth login          # GitHub.com → HTTPS → Yes → Login with a web browser
 
-Dans **le terminal d'Amandine** :
+# 3. Vérifier
+gh auth status         # doit afficher "Logged in as Lmenkikine"
 
-```bash
-gh auth login
-```
-
-Répondre :
-
-- **What account do you want to log into?** → `GitHub.com`
-- **Preferred protocol?** → `HTTPS`
-- **Authenticate Git with your GitHub credentials?** → `Yes`
-- **How would you like to authenticate?** → `Login with a web browser`
-
-`gh` affiche un **code à usage unique** puis ouvre le navigateur.
-
-> 👉 C'est **Michel** qui saisit ses identifiants / valide la connexion dans le navigateur.
-> Amandine ne tape jamais de mot de passe elle-même. Aucun identifiant n'est écrit ni stocké
-> dans ce repo.
-
-Vérifier :
-
-```bash
-gh auth status
-```
-
-## Étape 3 — Récupérer le repo
-
-```bash
+# 4. Cloner le repo
 gh repo clone MichaelTSS/open-referral-docs
 cd open-referral-docs
 ```
 
-## Étape 4 — Éditer une page (exemple)
+Prérequis : macOS avec [Homebrew](https://brew.sh) et `git`.
 
-Les pages sont des fichiers `.md`. Exemple : modifier l'accueil.
+---
 
-```bash
-# ouvrir README.md dans l'éditeur, faire une petite modif, sauvegarder
-```
-
-Structure utile :
-
-| Fichier | Page sur le site |
-| --- | --- |
-| `README.md` | Accueil (`/`) |
-| `getting-started.md` | `/getting-started` |
-| `knowledge/README.md` | `/knowledge` |
-| `ats-integrations/README.md` | `/ats-integrations` |
-| `ai-assistant-integrations/claude.md` | `/ai-assistant-integrations/claude` |
-| `SUMMARY.md` | Le sommaire / la navigation (ajouter ici toute nouvelle page) |
-
-## Étape 5 — Publier
+## Éditer et publier
 
 ```bash
+# éditer un fichier dans docs/ (voir table ci-dessous), puis :
 git add -A
-git commit -m "Docs: <décrire la modif>"
+git commit -m "docs: <décrire la modif>"
 git push origin main
 ```
 
-## Étape 6 — Vérifier en ligne
+Attendre ~1-2 min → la modif est en ligne sur https://docs.openreferral.io
+(Cloudflare rebuild automatiquement à chaque push).
 
-Attendre ~1 min, puis ouvrir https://docs.openreferral.io et vérifier la modif.
-GitBook resynchronise automatiquement après le push.
+### Où sont les pages
 
-## Ajouter une nouvelle page
+| Fichier | Page sur le site |
+| --- | --- |
+| `docs/index.md` | Accueil (`/`) |
+| `docs/getting-started.md` | `/getting-started` |
+| `docs/knowledge/index.md` | `/knowledge` |
+| `docs/ats-integrations/index.md` | `/ats-integrations` |
+| `docs/ai-assistant-integrations/claude.md` | `/ai-assistant-integrations/claude` |
+| `mkdocs.yml` (clé `nav`) | La navigation (ajouter ici toute nouvelle page) |
 
-1. Créer le fichier `.md` (ex. `knowledge/best-practices.md`).
-2. L'ajouter dans `SUMMARY.md` sous le bon groupe — **sinon elle n'apparaît pas** sur le site.
+### Ajouter une nouvelle page
+
+1. Créer le fichier, ex. `docs/knowledge/best-practices.md`.
+2. L'ajouter sous `nav:` dans `mkdocs.yml` — **sinon elle n'apparaît pas** dans le menu.
 3. `commit` + `push`.
+
+### Aperçu local (optionnel)
+
+```bash
+python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt
+./.venv/bin/mkdocs serve      # http://127.0.0.1:8000
+```
+
+### Syntaxe utile (MkDocs Material)
+
+Encadrés (admonitions) :
+
+```markdown
+!!! info
+
+    Ceci est une note d'information.
+```
+
+Types : `note`, `info`, `tip`, `success`, `warning`, `danger`.
