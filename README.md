@@ -1,20 +1,25 @@
----
-description: Guides, concepts and integration references for Open Referral.
----
+# Open Referral — Documentation
 
-# Welcome to Open Referral
+Source of the documentation site published at **https://docs.openreferral.io**.
 
-Open Referral is a B2B SaaS to run and scale employee referral programs. This documentation
-will walk you through setting up your account, connecting your ATS, and piloting your
-program in natural language from your favourite AI assistant.
+Built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) and hosted on
+**Cloudflare Pages**. Every push to `main` is built and deployed automatically.
 
-{% hint style="info" %}
-🚧 This documentation is being written. Pages are scaffolded and will be filled in progressively.
-{% endhint %}
+## Editing
 
-### Where to go next
+- Pages live in **`docs/`** (Markdown). The navigation is the `nav:` key in **`mkdocs.yml`**.
+- Push to `main` → Cloudflare rebuilds and updates the live site in ~1–2 min.
+- Full onboarding (setup, adding a page, local preview, syntax) is in **[DEMO.md](DEMO.md)**.
 
-* **Getting started** — create your account and launch your first program.
-* **Knowledge** — core concepts and best practices.
-* **ATS integrations** — connect your Applicant Tracking System (scrapers, entities, synchronisation).
-* **AI assistant integrations** — use Open Referral from Claude, Gemini CLI, ChatGPT or Le Chat.
+## Local preview
+
+```bash
+python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt
+./.venv/bin/mkdocs serve      # http://127.0.0.1:8000
+```
+
+## Hosting
+
+- **Repo → Cloudflare Pages** project `open-referral-docs` (Git integration, production branch `main`).
+- Build: `pip install -r requirements.txt && mkdocs build`, output `site`, `PYTHON_VERSION=3.12`.
+- Custom domain `docs.openreferral.io` — DNS is a CNAME in AWS Route 53 → `open-referral-docs.pages.dev`.

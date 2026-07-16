@@ -1,5 +1,7 @@
 # Getting started
 
+Salut ! 👋
+
 !!! info
 
     🚧 Coming soon.
