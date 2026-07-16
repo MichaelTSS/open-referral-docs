@@ -1,6 +1,6 @@
 # Getting started
 
-Salut ! 👋
+Salutations ! 👋
 
 !!! info
 
