@@ -1,5 +1,7 @@
 # Getting started
 
+Salut ! 👋
+
 {% hint style="info" %}
 🚧 Coming soon.
 {% endhint %}
