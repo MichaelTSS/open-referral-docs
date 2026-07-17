@@ -35,6 +35,11 @@ theme:
     - search.suggest
     - search.highlight
 
+extra:
+  analytics:
+    provider: google
+    property: G-WKMNN8QF4V
+
 extra_css:
   - assets/fontawesome/css/regular.min.css
   - assets/stylesheets/openreferral.css
