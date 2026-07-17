@@ -51,10 +51,10 @@
 
 /* ---- Dark scheme (slate) --------------------------------------------- */
 [data-md-color-scheme="slate"] {
-  /* Header/primary = navy night-800 in dark mode (per user choice) */
-  --md-primary-fg-color:        hsl(211 53% 11%);
-  --md-primary-fg-color--light: hsl(210 30% 30%);
-  --md-primary-fg-color--dark:  hsl(211 53% 8%);
+  /* Header/primary = terracotta in dark mode too (same as light) */
+  --md-primary-fg-color:        hsl(14 74% 45%);
+  --md-primary-fg-color--light: hsl(15 74% 52%);
+  --md-primary-fg-color--dark:  hsl(14 73% 28%);
   --md-primary-bg-color:        hsl(0 0% 100%);
   --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
 
@@ -74,11 +74,6 @@
 
   /* Code blocks on the dark card tone */
   --md-code-bg-color: hsl(210 44% 18%);
-}
-
-/* Separate the navy header from the equally-navy page body in dark mode */
-[data-md-color-scheme="slate"] .md-header {
-  border-bottom: 1px solid hsl(210 30% 22%);
 }
 
 /* No logo — collapse the empty logo anchor and the drawer title */

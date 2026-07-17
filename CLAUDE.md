@@ -80,8 +80,8 @@ which overrides Material's `--md-*` custom properties per scheme.
   (terra-600, ≈ `#C8471E` — this is the canonical brand colour; the favicon's `#C24A22`
   is a near-identical earlier value, fine to leave); accent (hover/focus) → honey
   (honey-600 in light for contrast, honey-500 in dark); bg → paper (light) / night-800
-  (dark); text → slate / 92%-white. **Dark-mode header is navy (night-800), not
-  terracotta** (user's choice) — with a bottom border to separate it from the navy body.
+  (dark); text → slate / 92%-white. The header is terracotta in both light and dark
+  modes.
 - **Fonts** — `theme.font: false` (opts out of Google Fonts; both faces are system
   fonts). `h1`/display and the header wordmark use **Georgia serif**; everything else
   uses the **Calibri, -apple-system, system-ui, "Segoe UI"** stack, set via
