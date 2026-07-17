@@ -3,6 +3,9 @@ site_url: https://docs.openreferral.io/
 site_description: Guides, concepts and integration references for Open Referral.
 docs_dir: docs
 
+exclude_docs: |
+  ai-assistant-integrations/claude.md
+
 theme:
   name: material
   custom_dir: overrides
@@ -59,7 +62,10 @@ nav:
   - ATS integrations:
       - Overview: ats-integrations/index.md
   - AI assistant integrations:
-      - Claude: ai-assistant-integrations/claude.md
+      - Claude:
+          - Overview: ai-assistant-integrations/claude/index.md
+          - For individuals (Free, Pro, Max): ai-assistant-integrations/claude/individuals.md
+          - For Team & Enterprise: ai-assistant-integrations/claude/team-enterprise.md
       - Gemini CLI: ai-assistant-integrations/gemini-cli.md
       - ChatGPT: ai-assistant-integrations/chatgpt.md
       - Le Chat (Mistral): ai-assistant-integrations/le-chat.md

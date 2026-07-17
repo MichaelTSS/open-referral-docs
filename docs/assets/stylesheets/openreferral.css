@@ -81,23 +81,45 @@
   border-bottom: 1px solid hsl(210 30% 22%);
 }
 
-/* No logo — collapse the (now empty) logo anchor in header and drawer */
-.md-logo {
+/* No logo — collapse the empty logo anchor and the drawer title */
+.md-logo,
+.md-nav__title[for="__drawer"] {
   display: none;
 }
 
 /* ---- Admonitions --------------------------------------------------- */
-/* "info" → DS --info (navy blue hsl(221 83% 53%)), replacing Material's cyan.
-   Same value in both schemes. */
+/* Drop the leading icon on every admonition / details block, and reclaim
+   the space it left (title left padding was 40px for the icon). */
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  display: none;
+}
+/* Match Material's own [dir]-scoped specificity to reclaim the icon gap */
+[dir=ltr] .md-typeset .admonition-title,
+[dir=ltr] .md-typeset summary {
+  padding-left: 0.6rem; /* = the title's right padding */
+}
+[dir=rtl] .md-typeset .admonition-title,
+[dir=rtl] .md-typeset summary {
+  padding-right: 0.6rem;
+}
+
+/* Design-system semantic colours (border + tinted title bar). */
+/* success → #2f9353 */
+.md-typeset .admonition.success,
+.md-typeset details.success {
+  border-color: #2f9353;
+}
+.md-typeset .success > .admonition-title,
+.md-typeset .success > summary {
+  background-color: rgba(47, 147, 83, 0.1);
+}
+/* info → #2463eb */
 .md-typeset .admonition.info,
 .md-typeset details.info {
-  border-color: hsl(221 83% 53%);
+  border-color: #2463eb;
 }
 .md-typeset .info > .admonition-title,
 .md-typeset .info > summary {
-  background-color: hsla(221, 83%, 53%, 0.1);
-}
-.md-typeset .info > .admonition-title::before,
-.md-typeset .info > summary::before {
-  background-color: hsl(221 83% 53%);
+  background-color: rgba(36, 99, 235, 0.1);
 }
